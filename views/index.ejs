@@ -1,0 +1,17 @@
+<html>
+  <body>
+    <% messages.forEach((message) => { %>
+        <ul>
+            <li>
+                <%= message.text %> 
+            </li>
+            <li>
+                <%= message.user %>
+            </li>
+            <li>
+                <%= message.added %>
+            </li>
+        </ul>
+    <% }); %>
+  </body>
+</html>
