@@ -9,6 +9,14 @@ async function getAllMessages() {
     return rows;
 }
 
+async function createNewMessage(username, text) {
+    await pool.query(`
+        INSERT INTO messages (text, username)
+        VALUES
+            ($1, $2);`, [text, username]);
+}
+
 module.exports = {
-    getAllMessages
+    getAllMessages,
+    createNewMessage
 }

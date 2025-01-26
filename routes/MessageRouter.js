@@ -3,21 +3,9 @@ const { messages } = require("./IndexRouter");
 
 const messageRouter = Router();
 
-messageRouter.get("/", (req, res) => {
-    res.render("form");
-});
+const controller = require("../controllers/MessageController");
 
-messageRouter.post("/", (req, res) => {
-    let name = req.body.name;
-    let message = req.body.message;
-
-    messages.push({
-        text: message,
-        user: name,
-        added: new Date()
-    });
-
-    res.redirect("/");
-});
+messageRouter.get("/", controller.getNewMessageForm);
+messageRouter.post("/", controller.createNewMessage);
 
 module.exports = messageRouter;
