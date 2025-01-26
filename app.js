@@ -5,7 +5,7 @@ const app = express();
 const PORT = 8080;
 
 // Routers
-const { indexRouter, messages } = require("./routes/IndexRouter");
+const { indexRouter } = require("./routes/IndexRouter");
 const messageRouter = require("./routes/MessageRouter");
 
 // hooking up ejs
